@@ -1,9 +1,12 @@
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using CourseFinalProject.Data;
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<CourseFinalProjectContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("CourseFinalProjectContext") ?? throw new InvalidOperationException("Connection string 'CourseFinalProjectContext' not found.")));
+    options.UseMySql( Configuration.GetConnectionString("CourseFinalProjectContext"), builder =>
+        builder.MigrationsAssembly("CourseFinalProject")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
