@@ -1,7 +1,7 @@
 <!--- # "Can be a image or a gift from the project pages" -->
 
 <p align="center">
-  <img src="../.github/example.png" alt="Project Name">
+  <img src="Archives/bannerCabra.png" alt="Sellers System">
 </p>
 
 # Sellers System
